@@ -41,15 +41,8 @@ public class NoteController {
     }
 
     @PostMapping(value = "/add")
-    public  @ResponseBody ModelMap addNote(
-            @RequestParam(defaultValue = "") String content ,
-            @RequestParam(defaultValue = "") String type,
-            @RequestParam(defaultValue = "") String ipAddress
-    ) {
-        Note note = new Note();
-        note.setType(type);
-        note.setContent(content);
-        note.setIpAddress(ipAddress);
+    public  @ResponseBody ModelMap addNote( Note note ) {
+
         note.setUuid(UUID.randomUUID().toString());
         note.setCratedAt(Timestamp.valueOf(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"))));
         ModelMap model = new ModelMap();

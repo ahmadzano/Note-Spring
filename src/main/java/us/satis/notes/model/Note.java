@@ -1,5 +1,7 @@
 package us.satis.notes.model;
 
+import org.springframework.beans.factory.annotation.Required;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
